@@ -1,8 +1,175 @@
+<style>
+body {
+height: 100%;
+overflow: hidden;
+}
+#sidenav, #kmas-right, #footer, .KmarsHub-logo {display:none !important;}
+.try-page {background: white;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 2px;
+}
+.responsive {
+    width: 100%;
+    height: auto;
+
+}
+      .CodeMirror-focused .cm-matchhighlight {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFklEQVQI12NgYGBgkKzc8x9CMDAwAAAmhwSbidEoSQAAAABJRU5ErkJggg==);
+        background-position: bottom;
+        background-repeat: repeat-x;
+      }
+      .cm-matchhighlight {background-color: lightgreen}
+      .CodeMirror-selection-highlight-scrollbar {background-color: green}
+
+.cm-trailingspace {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QUXCToH00Y1UgAAACFJREFUCNdjPMDBUc/AwNDAAAFMTAwMDA0OP34wQgX/AQBYgwYEx4f9lQAAAABJRU5ErkJggg==);
+        background-position: bottom left;
+        background-repeat: repeat-x;
+      }
+.dropdown-content a, .dropdown-content button {
+    border: 1px solid white;
+    background: #a5eaff;
+}
+.kh-themes-select select {
+    background-color: #09bf5a;
+}
+.dropdown-content {
+    min-width: 323px!important; //editor.css
+}
+</style>
+<!--
+<link href="https://rawcdn.githack.com/eKmarshi/lib/7dfe0539ae6cf316d138df97ae1a9bdbb3b21a5b/codemirror.css" rel="stylesheet" />
+-->
+
+<link rel="stylesheet" href="https://rawcdn.githack.com/KmarsHub/hub/bcbdcbc94b828ec2ec40fb18d7f9cd4ca105f0d6/editor.css">
+<link rel="stylesheet" href="https://rawcdn.githack.com/KmarsHub/lib/92fe5b9ad4dcc32b89ade044cb1ffab926d95076/codemirror.css">
+<link rel="stylesheet" href="https://rawcdn.githack.com/KmarsHub/lib/731c70cc6fc507cad8195d048fd754bae63d560b/addons.css">
+<link rel="stylesheet" href="https://rawcdn.githack.com/KmarsHub/lib/decff75163cb701776d2552883b35981ac90d87d/cm-themes.css">
+<script src="https://rawcdn.githack.com/KmarsHub/lib/b458c08d89ba3843b054908252642872f09036a7/codemirror.js"></script>
+<script src="https://rawcdn.githack.com/KmarsHub/lib/24ddcb5a7a2b7bc57e547dd5e8893cbf8a39091d/folds.js"></script>
+<script src="https://rawcdn.githack.com/KmarsHub/lib/9106ad562781751de00908f0f53c0bab2b6c94ff/searches.js"></script>
+<script src="https://rawcdn.githack.com/KmarsHub/lib/0e03fb1ae0fda1f36a136cce46cb964325d119ad/edits.js"></script>
+<script src="https://rawcdn.githack.com/KmarsHub/lib/f51147497d3a8fc8d942feb75b2894394eae6bfc/features.js"></script>
+<script src="https://rawcdn.githack.com/KmarsHub/lib/a8a6221d2ee23dc8ec084d91227fa2f1e3ab74bf/hints.js"></script>
+<script src="https://rawcdn.githack.com/KmarsHub/lib/0d2880fdbba0777a8ddb046ecd2b992fe5204615/modes.js"></script>
+<script src="https://codemirror.net/addon/search/match-highlighter.js"></script>
+<script src="https://codemirror.net/addon/edit/trailingspace.js"></script>
+<script>
+function mFun() {
+    var x = document.getElementById("topnav");
+    x.innerHTML='<a href="/" title="KmarsHub" class="fas fa-home active km-bar-item km-button topnav-icons" style="font-size: 26px !important;margin-top: 0px;padding: 13px 14px !important;width: 60px !important;"></a> <a href="javascript:void(0);" onclick="restack(currentStack)" title="Change Orientation" class="res-hide km-bar-item km-button topnav-icons" style="font-size: 20px !important; margin-top: 0px; padding: 11px 15px !important; width: 60px !important;"><i class="fas fa-mobile-alt" style="transform: rotate(-30deg);"></i></a> <a href="javascript:void(0);" onclick="retheme()" title="Change Theme" id="help-btn" class="res-hide km-button km-bar-item topnav-icons far fa-question-circle" style="font-size:26px !important;margin-top:0px"></a> <a href="javascript:void(0);" onclick="location.reload(true);" title="Refresh" class="fa-sync-alt fas km-bar-item km-button topnav-icons res-hide" style="font-size: 25px !important; margin-top: 2px;"></a>  <div class="dropdown" style="background-color: green;"><button id="menuEdit" onclick="menuEdit()" class="dropbtn"><i class="fa fa-edit"></i> Edit <i class="fa fa-caret-down"></i></button> <div id="dropEdit" class="dropdown-content"> <a onclick="editor.undo();">Undo <span class="km-right km-small">Crtl+Z</span></a> <a onclick="editor.redo();">Redo <span class="km-right km-small">Crtl+Y</span></a> <a onclick="editor.findPersistent();">go <span class="km-right km-small">Crtl+X</span></a> <a onclick="kmcopy();">Copy <span class="km-right km-small">Crtl+C</span></a> <a onclick="editor.paste();">Paste <span class="km-right km-small">Crtl+V</span></a> <a onclick="editor.clearHistory();">Clear History<span class="km-right km-small">Crtl+A</span></a> <a onclick="editor.undoSelection();">Undo Selection<span class="km-right km-small">Crtl+U</span></a> <a onclick="editor.redoSelection();">Redo Selection<span class="km-right km-small">Alt+U</span></a> <a onclick="">Onclick <span class="km-right km-small">Crtl+</span></a> <a onclick="">Onclick <span class="km-right km-small">Crtl+</span></a> <a onclick="">Onclick <span class="km-right km-small">Crtl+</span></a> <a href="#">Link 3</a> <a href="#">Link 4</a> <a href="#">Link 5</a><div class="subdropdown"> <button onclick="submenuEdit()" class="subdropbtn">Edit</button> <div id="subdropEdit"  class="subdropdown-content"> <a href="#">Link 11</a> <a href="#">Link 12</a> <a href="#">Link 13</a> <a href="#">Link 14</a> <a href="#">Link 15</a> <a href="#">Link 16</a> </div></div> <a href="#">Link 6</a> <a href="#">Link 7</a></div></div>  <div class="dropdown" style="background-color: green;"> <button onclick="menuSetting()" class="dropbtn"><i class="fa fa-gear"></i> Setting <i class="fa fa-caret-down"></i></button> <div id="dropSetting" class="dropdown-content"><div class="subdropdown"> <button id="menuSetting" onclick="submenuSetting();" class="subdropbtn">Themes</button> <div id="subdropSetting"  class="subdropdown-content"> <div class="kh-themes-select"> <select onchange="selectTheme()" id=select onclick="fa_caret()"> <option selected>default</option> <option>3024-day</option> <option>3024-night</option> <option>abcdef</option> <option>ambiance</option> <option>base16-dark</option> <option>base16-light</option> <option>bespin</option> <option>blackboard</option> <option>cobalt</option> <option>colorforth</option> <option>darcula</option> <option>dracula</option> <option>duotone-dark</option> <option>duotone-light</option> <option>eclipse</option> <option>elegant</option> <option>erlang-dark</option> <option>gruvbox-dark</option> <option>hopscotch</option> <option>icecoder</option> <option>idea</option> <option>isotope</option> <option>lesser-dark</option> <option>liquibyte</option> <option>lucario</option> <option>material</option> <option>mbo</option> <option>mdn-like</option> <option>midnight</option> <option>monokai</option> <option>neat</option> <option>neo</option> <option>night</option> <option>nord</option> <option>oceanic-next</option> <option>panda-syntax</option> <option>paraiso-dark</option> <option>paraiso-light</option> <option>pastel-on-dark</option> <option>railscasts</option> <option>rubyblue</option> <option>seti</option> <option>shadowfox</option> <option>solarized dark</option> <option>solarized light</option> <option>the-matrix</option> <option>tomorrow-night-bright</option> <option>tomorrow-night-eighties</option> <option>ttcn</option> <option>twilight</option> <option>vibrant-ink</option> <option>xq-dark</option> <option>xq-light</option> <option>yeti</option> <option>yonce</option> <option>zenburn</option></select></div> </div> </div> <a onclick="fullScreen()">Full Screen <span class="km-right km-small">Ctrl+F11</span></a> <a onclick="autoCloseTags()">Auto Close Tags</a> <a onclick="autoCloseBrackets()">Auto Close Brackets</a> <a onclick="styleActiveLine()">Active Line</a> <a onclick="lineNumbers()">Line Numbers</a> <a  onclick="foldGutter()">fold Gutter</a> <a onclick="lineWrapping()">line Wrapping</a> <a onclick="leftLine()">LeftLine</a> <a onclick="">Link 3</a> <a onclick="">Link 4</a> <a onclick="">Link 5</a> <a href="#">Link 6</a> </div> </div> <a class="km-button km-bar-item" style="font-size:22px;margin-top:0px" onclick="submitTryit(1)">Preview &#187;</a> <span class="km-right km-hide-medium km-hide-small" style="padding:8px 8px 8px 8px;display:block"></span>  <span id="framesize" class="km-right km-hide-small" style="padding:8px 0;display:block;float:right;background:green;">Size: <span>984 x 137</span></span> <a href="javascript:void(0);" style="font-size:22px;padding: 15px 18px !important;" class="fa fa-bars icon" onclick="topresp()"></a> '; 
+}
+</script>
+<script>
+mFun();
+</script>
+<script>
+function topresp() {
+  var x = document.getElementById("topnav");
+  var y = document.getElementsByClassName("res-hide");
+  var framesize = document.getElementById("framesize");
+  var hidesetting = document.getElementById("dropSetting");
+  var hideedit = document.getElementById("dropEdit");
+   if (hidesetting.classList.contains('show')) {
+        hidesetting.classList.remove('show');
+      }
+   if (hideedit.classList.contains('show')) {
+        hideedit.classList.remove('show');
+      }
+  if (x.className === "topnav notranslate") {
+    x.className += " responsive";
+    x.style.height = "inherit"
+        y.display = "none";
+framesize.style.cssText += ';display:block !important;';
+framesize.style.width = "100%"
+  } else {  
+    x.className = "topnav notranslate";
+    x.style.height = "auto"
+        y.display = "none";
+framesize.style.cssText = ';display:block;';
+framesize.style.width = "auto"
+framesize.style.background = "green"
+framesize.style.padding = "8px 0px"
+framesize.style.float = "right"
+  }
+}
+</script>
+<script>
+/* 
+
+When the user clicks on the button, 
+toggle between hiding and showing the dropdown content   menuEdit */
+
+function menuEdit() {
+var menuEdit = document.getElementById("menuEdit");
+var dropEdit = document.getElementById("dropEdit");
+var closeDrop = document.getElementById("dropSetting");
+dropEdit.classList.toggle("show");
+menuEdit.classList.toggle("active");
+ if (closeDrop.classList.contains('show')) {
+        closeDrop.classList.remove('show');
+      }
+}
+
+function submenuEdit() {
+document.getElementById("subdropEdit").classList.toggle("show");
+}
+
+function menuSetting() {
+document.getElementById("dropSetting").classList.toggle("show");
+document.getElementById("menuSetting").classList.toggle("active");
+var closeDrop = document.getElementById("dropEdit");
+ if (closeDrop.classList.contains('show')) {
+        closeDrop.classList.remove('show');
+      }
+    
+}
+function submenuSetting() {
+document.getElementById("subdropSetting").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+/*
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+*/
+</script>
+
+<div class='try-page'>
+<div id='tryitLeaderboard' style="background-color:#ffffff">
+<!-- TryitLeaderboard -->
+
+  <!--<pre>try_it_leaderboard, all: [320,50][728,90][468,60]</pre>-->
+  <div id="snhb-try_it_leaderboard-0"><a href="/"><img src="https://1.bp.blogspot.com/-16fi1TwOLeg/W5i8Hj9k3-I/AAAAAAAAAHo/tnikAGbbrUwrzBJqWwJ1HI230L0QZ3RnwCK4BGAYYCw/s1600/kmars-ad%2528728-90%2529.jpg" alt="KMARS Web" class="responsive" /></a>
+</div>
+ 
+</div>
+<div id="shield"></div>
+
+<a href="javascript:void(0)" id="dragbar"></a>
+
+<div id="container">
 <div id="menuOverlay" class="kmars-overlay kmars-transparent" style="cursor:pointer;z-index:14"></div>
   <div id="textareacontainer">
     <div id="textarea">
       <div id="textareawrapper">
-<textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false"><!DOCTYPE html>
+        <textarea autocomplete="off" id="textareaCode" wrap="logical" spellcheck="false"><!DOCTYPE html>
 <html>
 <body>
 <style>
@@ -39,19 +206,44 @@ function myFunction() {
 </script>
 </body>
 </html></textarea>
-<form id="codeForm" autocomplete="off" style="margin:0px;display:none;">
+        <form id="codeForm" autocomplete="off" style="margin:0px;display:none;">
           <input type="hidden" name="code" id="code" />
         </form>
        </div>
     </div>
   </div>
-
   <div id="iframecontainer">
     <div id="iframe">
       <div id="iframewrapper"></div>
     </div>
   </div>
-<script>  
+</div>
+
+</div>
+<script>
+if (window.addEventListener) {              
+    window.addEventListener("resize", browserResize);
+} else if (window.attachEvent) {                 
+    window.attachEvent("onresize", browserResize);
+}
+var xbeforeResize = window.innerWidth;
+
+function browserResize() {
+    var afterResize = window.innerWidth;
+    if ((xbeforeResize < (970) && afterResize >= (970)) || (xbeforeResize >= (970) && afterResize < (970)) ||
+        (xbeforeResize < (728) && afterResize >= (728)) || (xbeforeResize >= (728) && afterResize < (728)) ||
+        (xbeforeResize < (468) && afterResize >= (468)) ||(xbeforeResize >= (468) && afterResize < (468))) {
+        xbeforeResize = afterResize;
+        
+        snhb.queue.push(function(){  snhb.startAuction(["try_it_leaderboard"]); });
+         
+    }
+    if (window.screen.availWidth <= 768) {
+      restack(window.innerHeight > window.innerWidth);
+    }
+    fixDragBtn();
+    showFrameSize();    
+}
 var fileID = "";
 var loadSave = false;
 function getSavedFile() {
@@ -74,7 +266,11 @@ function getSavedFile() {
     httpA.send(paramA);   
 }
 
-  function submitTryit(n) {
+</script>
+<script>
+submitTryit()
+
+function submitTryit(n) {
   if (window.editor) {
     window.editor.save();
   }
@@ -86,7 +282,7 @@ function getSavedFile() {
   document.getElementById("iframewrapper").innerHTML = "";
   document.getElementById("iframewrapper").appendChild(ifr);
   if (loadSave == true ) {
-    ifr.setAttribute("src", "/p/code.html");
+    ifr.setAttribute("src", "/code/opentext.htm");
   } else if (fileID != "" && loadSave == false) {
     var t=text;
     t=t.replace(/=/gi,"kmarsequalsign");
@@ -97,7 +293,7 @@ function getSavedFile() {
      pos=t.search(/script/i);
     }
     document.getElementById("code").value=t;
-    document.getElementById("codeForm").action = "https://kmarsweb.blogspot.com/p/demo.html?x=" + Math.random();
+    document.getElementById("codeForm").action = "https://kmarsweb.blogspot.com/p/tryit.html?x=" + Math.random();
     document.getElementById('codeForm').method = "post";
     document.getElementById('codeForm').acceptCharset = "utf-8";
     document.getElementById('codeForm').target = "iframeResult";
@@ -116,7 +312,145 @@ function getSavedFile() {
     }
   }
 }
-  function colorcoding() {
+var currentStack=true;
+if ((window.screen.availWidth <= 768 && window.innerHeight > window.innerWidth) || "" == " horizontal") {restack(true);}
+function restack(horizontal) {
+    var tc, ic, t, i, c, f, sv, sh, d, height, flt, width;
+    tc = document.getElementById("textareacontainer");
+    ic = document.getElementById("iframecontainer");
+    t = document.getElementById("textarea");
+    i = document.getElementById("iframe");
+    c = document.getElementById("container");    
+    sv = document.getElementById("stackV");
+    sh = document.getElementById("stackH");
+    tc.className = tc.className.replace("horizontal", "");
+    ic.className = ic.className.replace("horizontal", "");        
+    t.className = t.className.replace("horizontal", "");        
+    i.className = i.className.replace("horizontal", "");        
+    c.className = c.className.replace("horizontal", "");                        
+    if (sv) {sv.className = sv.className.replace("horizontal", "")};
+    if (sv) {sh.className = sh.className.replace("horizontal", "")};
+    stack = "";
+    if (horizontal) {
+        tc.className = tc.className + " horizontal";
+        ic.className = ic.className + " horizontal";        
+        t.className = t.className + " horizontal";        
+        i.className = i.className + " horizontal";                
+        c.className = c.className + " horizontal";                
+        if (sv) {sv.className = sv.className + " horizontal"};
+        if (sv) {sh.className = sh.className + " horizontal"};
+        stack = " horizontal";
+        document.getElementById("textareacontainer").style.height = "50%";
+        document.getElementById("iframecontainer").style.height = "50%";
+        document.getElementById("textareacontainer").style.width = "100%";
+        document.getElementById("iframecontainer").style.width = "100%";
+        currentStack=false;
+    } else {
+        document.getElementById("textareacontainer").style.height = "100%";
+        document.getElementById("iframecontainer").style.height = "100%";
+        document.getElementById("textareacontainer").style.width = "50%";
+        document.getElementById("iframecontainer").style.width = "50%";
+        currentStack=true;        
+    }
+    fixDragBtn();
+    showFrameSize();
+}
+function showFrameSize() {
+  var t;
+  var width, height;
+  width = Number(kmars_getStyleValue(document.getElementById("iframeResult"), "width").replace("px", "")).toFixed();
+  height = Number(kmars_getStyleValue(document.getElementById("iframeResult"), "height").replace("px", "")).toFixed();
+  document.getElementById("framesize").innerHTML = "Size: <span>" + width + " x " + height + "</span>";
+}
+var dragging = false;
+var stack;
+function fixDragBtn() {
+  var textareawidth, leftpadding, dragleft, containertop, buttonwidth
+  var containertop = Number(kmars_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
+  if (stack != " horizontal") {
+    document.getElementById("dragbar").style.width = "5px";    
+    textareasize = Number(kmars_getStyleValue(document.getElementById("textareawrapper"), "width").replace("px", ""));
+    leftpadding = Number(kmars_getStyleValue(document.getElementById("textarea"), "padding-left").replace("px", ""));
+    buttonwidth = Number(kmars_getStyleValue(document.getElementById("dragbar"), "width").replace("px", ""));
+    textareaheight = kmars_getStyleValue(document.getElementById("textareawrapper"), "height");
+    dragleft = textareasize + leftpadding + (leftpadding / 2) - (buttonwidth / 2);
+    document.getElementById("dragbar").style.top = containertop + "px";
+    document.getElementById("dragbar").style.left = dragleft + "px";
+    document.getElementById("dragbar").style.height = textareaheight;
+    document.getElementById("dragbar").style.cursor = "col-resize";
+    
+  } else {
+    document.getElementById("dragbar").style.height = "5px";
+    if (window.getComputedStyle) {
+        textareawidth = window.getComputedStyle(document.getElementById("textareawrapper"),null).getPropertyValue("height");
+        textareaheight = window.getComputedStyle(document.getElementById("textareawrapper"),null).getPropertyValue("width");
+        leftpadding = window.getComputedStyle(document.getElementById("textarea"),null).getPropertyValue("padding-top");
+        buttonwidth = window.getComputedStyle(document.getElementById("dragbar"),null).getPropertyValue("height");
+    } else {
+        dragleft = document.getElementById("textareawrapper").currentStyle["width"];
+    }
+    textareawidth = Number(textareawidth.replace("px", ""));
+    leftpadding = Number(leftpadding .replace("px", ""));
+    buttonwidth = Number(buttonwidth .replace("px", ""));
+    dragleft = containertop + textareawidth + leftpadding + (leftpadding / 2);
+    document.getElementById("dragbar").style.top = dragleft + "px";
+    document.getElementById("dragbar").style.left = "5px";
+    document.getElementById("dragbar").style.width = textareaheight;
+    document.getElementById("dragbar").style.cursor = "row-resize";        
+  }
+}
+function dragstart(e) {
+  e.preventDefault();
+  dragging = true;
+  var main = document.getElementById("iframecontainer");
+}
+function dragmove(e) {
+  if (dragging) 
+  {
+    document.getElementById("shield").style.display = "block";        
+    if (stack != " horizontal") {
+      var percentage = (e.pageX / window.innerWidth) * 100;
+      if (percentage > 5 && percentage < 98) {
+        var mainPercentage = 100-percentage;
+        document.getElementById("textareacontainer").style.width = percentage + "%";
+        document.getElementById("iframecontainer").style.width = mainPercentage + "%";
+        fixDragBtn();
+      }
+    } else {
+      var containertop = Number(kmars_getStyleValue(document.getElementById("container"), "top").replace("px", ""));
+      var percentage = ((e.pageY - containertop + 20) / (window.innerHeight - containertop + 20)) * 100;
+      if (percentage > 5 && percentage < 98) {
+        var mainPercentage = 100-percentage;
+        document.getElementById("textareacontainer").style.height = percentage + "%";
+        document.getElementById("iframecontainer").style.height = mainPercentage + "%";
+        fixDragBtn();
+      }
+    }
+    showFrameSize();    
+  }
+}
+function dragend() {
+  document.getElementById("shield").style.display = "none";
+  dragging = false;
+  if (window.editor) {
+    window.editor.refresh();
+  }
+}
+if (window.addEventListener) {              
+  document.getElementById("dragbar").addEventListener("mousedown", function(e) {dragstart(e);});
+  document.getElementById("dragbar").addEventListener("touchstart", function(e) {dragstart(e);});
+  window.addEventListener("mousemove", function(e) {dragmove(e);});
+  window.addEventListener("touchmove", function(e) {dragmove(e);});
+  window.addEventListener("mouseup", dragend);
+  window.addEventListener("touchend", dragend);
+  window.addEventListener("load", fixDragBtn);
+  window.addEventListener("load", showFrameSize);
+}
+
+
+
+
+function colorcoding() {
   var ua = navigator.userAgent;
   //Opera Mini refreshes the page when trying to edit the textarea.
   if (ua && ua.toUpperCase().indexOf("OPERA MINI") > -1) { return false; }
@@ -131,4 +465,154 @@ function kmars_getStyleValue(elmnt,style) {
         return elmnt.currentStyle[style];
     }
 }
+</script>
+<script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("textareaCode"), {
+    mode: "htmlmixed",
+    autoCloseTags: true,
+    matchTags: {bothTags: true},
+    matchBrackets: true,
+    autoCloseBrackets: true,
+    styleActiveLine: true,
+    lineWrapping: true,
+ autofocus: true, /* extra options start*/
+ readOnly: false,
+ undoDepth: 1000,
+ historyEventDelay: 500,
+ indentUnit: 2, /* default=2*/
+ tabSize: 4, /* default=4*/
+ indentWithTabs: false, /* default=false*/
+ smartIndent: true, /* default=true*/
+ direction: "ltr", /* "ltr" | "rtl" default=ltr*/
+ rtlMoveVisually: false, /* default=false */
+ showCursorWhenSelecting: true, /* default=false*/
+lint: true,
+ /* extra options end*/
+// To highlight on scrollbars as well, pass annotateScrollbar in options
+  // as below.
+  highlightSelectionMatches: {showToken: /\w/, annotateScrollbar: true},
+showTrailingSpace: true,
+ lineNumbers: true,
+ foldGutter: true,
+ findPersistent: true,
+    gutters: ["CodeMirror-lint-markers", "CodeMirror-linenumbers", "CodeMirror-foldgutter", "breakpoints"],
+    extraKeys: { "Ctrl-F11": function(cm) {cm.setOption("fullScreen", !cm.getOption("fullScreen"));},
+"Esc": function(cm) {if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);},
+"Ctrl-J": "toMatchingTag",
+"Ctrl-Alt-K": function(cm) {cm.showHint({hint: CodeMirror.hint.anyword});},
+"Ctrl-B": "findPersistent",
+"Ctrl-K": function(cm) {cm.setOption("styleActiveLine", !cm.getOption("styleActiveLine"));},
+"Ctrl-M": cm => CodeMirror.commands.clearSearch(cm),
+"Ctrl-I": cm => CodeMirror.commands.unfoldAll(cm),
+"Ctrl-E": cm => CodeMirror.commands.foldAll(cm),
+"Ctrl-L": function(cm){ cm.foldCode(cm.getCursor()); }
+}
+  });
+editor.on("keydown", function(cm, event) {
+if(!(event.ctrlKey) && 
+ (event.keyCode >= 65 && event.keyCode <=90) && !(event.altKey) && 
+ (event.keyCode >= 65 && event.keyCode <=90) || 
+ (event.keyCode >= 185 && event.keyCode <=222) ||
+ (event.keyCode >= 46 && event.keyCode <=57) 
+  ){
+   CodeMirror.commands.autocomplete(cm, null, {completeSingle: false});
+   }
+if(event.keyCode > 8 && event.keyCode <222){
+   CodeMirror.commands.clearSearch(cm);
+   }
+   });
+     editor.setCursor({line: 2, ch: 2});/*doc.setCursor(pos:{line,ch}|number, ?ch: number, ?options:object);*/
+     editor.foldCode(CodeMirror.Pos(3, 0));
+  editor.foldCode(CodeMirror.Pos(6, 0));
+  editor.foldCode(CodeMirror.Pos(9, 0));
+  editor.foldCode(CodeMirror.Pos(10, 0));
+  editor.foldCode(CodeMirror.Pos(12, 0));
+  editor.foldCode(CodeMirror.Pos(16, 0));
+  editor.foldCode(CodeMirror.Pos(20, 0));
+  editor.foldCode(CodeMirror.Pos(24, 0));
+  editor.foldCode(CodeMirror.Pos(28, 0));
+/* kmas folding start with var editor or hoshi etc fold begin 0 range is less one 
+mode can be written as mode: {name: "htmlmixed"},  */
+function fullScreen() {
+if (editor.getOption("fullScreen")) {editor.setOption("fullScreen", false);}
+else {editor.setOption("fullScreen", true);}
+}
+function autoCloseTags() {
+if (editor.getOption("autoCloseTags")) {editor.setOption("autoCloseTags", false);}
+else {editor.setOption("autoCloseTags", true);}
+}
+function autoCloseBrackets() {
+if (editor.getOption("autoCloseBrackets")) {editor.setOption("autoCloseBrackets", false);}
+else {editor.setOption("autoCloseBrackets", true);}
+}
+function styleActiveLine() {
+if (editor.getOption("styleActiveLine")) {editor.setOption("styleActiveLine", false);}
+else {editor.setOption("styleActiveLine", true);}
+}
+function lineNumbers() {
+if (editor.getOption("lineNumbers")) {editor.setOption("lineNumbers", false); editor.setOption("foldGutter", false);}
+else {editor.setOption("lineNumbers", true);
+editor.setOption("foldGutter", true);}
+}
+function foldGutter() {
+if (editor.getOption("lineNumbers", true)) {
+if (editor.getOption("foldGutter", true)) {editor.setOption("foldGutter", false);}
+else {editor.setOption("foldGutter", true);}
+}}
+function lineWrapping() {
+if (editor.getOption("lineWrapping")) {editor.setOption("lineWrapping", false);}
+else {editor.setOption("lineWrapping", true);}
+}
+function leftLine() {
+if (editor.getOption("gutters")) {editor.setOption("gutters", false);editor.setOption("lineNumbers", false);}
+else {editor.setOption("gutters", ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "breakpoints"]);editor.setOption("lineNumbers", true);}
+}
+    </script>
+
+    <script>
+editor.on("gutterClick", function(cm, n) {
+  var info = cm.lineInfo(n);
+  cm.setGutterMarker(n, "breakpoints", info.gutterMarkers ? null : makeMarker());
+});
+
+function makeMarker() {
+  var marker = document.createElement("div");
+  marker.style.color = "#fbbc05";
+  marker.innerHTML = "&#9679;";
+  return marker;
+}
+</script><!--
+<script type="text/javascript">
+var nums = "0123456789", space = " ";
+var colors = ["#DF0101", "#FFFF00", "#00ff00", "#0080ff", "#ff00ff", "000000"];
+var rulers = [], value = "";
+  for (var i = 0; i <= 5; i++) {
+    rulers.push({color: colors[i], column: i * 10, lineStyle: "solid", width: 10});
+    for (var j = 1; j < i; j++) value += space;
+    value += nums + "\n";
+  }
+  var editor = CodeMirror(document.body.lastChild, {
+    rulers: rulers,
+    value: value + value + value,
+    lineNumbers: true
+  });
+</script> -->
+<script>
+  var input = document.getElementById("select");
+  function selectTheme() {
+    var theme = input.options[input.selectedIndex].textContent;
+    editor.setOption("theme", theme);
+    location.hash = "#" + theme;
+  }
+  var choice = (location.hash && location.hash.slice(1)) ||
+               (document.location.search &&
+                decodeURIComponent(document.location.search.slice(1)));
+  if (choice) {
+    input.value = choice;
+    editor.setOption("theme", choice);
+  }
+  CodeMirror.on(window, "hashchange", function() {
+    var theme = location.hash.slice(1);
+    if (theme) { input.value = theme; selectTheme(); }
+  });
 </script>
