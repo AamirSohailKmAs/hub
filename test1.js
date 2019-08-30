@@ -1,4 +1,4 @@
-(function changeValue() {editor.setValue("<!DOCTYPE html>
+(function changeValue() {editor.setValue('<!DOCTYPE html>
 <html>
 <body>
 <style>
@@ -37,7 +37,7 @@ function myFunction() {
 (function changeValue() {editor.setValue("<p>kmas</p>");})();
 </script>
 </body>
-</html>");})();
+</html>');})();
 submitTryit();
 /*window.onload = function() {
   setTimeout(hoshi, 1000);
