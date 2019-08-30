@@ -1,4 +1,5 @@
 (function changeValue() {editor.setValue("<p>kmas</p>");})();
-window.onload = function() {
-  setTimeout(submitTryit, 1000);
-}
+submitTryit();
+/*window.onload = function() {
+  setTimeout(hoshi, 1000);
+}*/
