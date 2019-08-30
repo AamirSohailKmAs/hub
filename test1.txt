@@ -1,6 +1,0 @@
-(function changeValue() {editor.setValue('<!DOCTYPE html>
-<html>
-<body>
-</body>
-</html>');})();
-submitTryit();
