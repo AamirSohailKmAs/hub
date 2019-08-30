@@ -1,8 +1,4 @@
-(function changeValue() {editor.setValue('<!DOCTYPE html>
-<html>
-<body>
-</body>
-</html>');})();
+(function changeValue() {editor.setValue('<p>kmas</p>');})();
 submitTryit();
 /*window.onload = function() {
   setTimeout(hoshi, 1000);
