@@ -329,7 +329,13 @@ function printPage() {
     var myWindow = window.open('', '', '');
     myWindow.document.write("<html><head>" + head + "<style>body{padding:15px;}@media print {.printbtn {display:none;}}</style></head><body><button class='printbtn' onclick='window.print()'>Print Page</button><br><br>" + content + "<p><a href='/2010/07/copyright.html'>Copyright 2019</a> by KmarsHub. All Rights Reserved.</p></body></html>");
 }
-
+window.addEventListener('load', function () {
+  var active = document.getElementById("active-sidenav");
+  var frame = document.getElementById("leftmenuinnerinner");
+  var h = frame.contentWindow.document.getElementsByClassName("post-content")[0];
+  var x = document.adoptNode(active);
+  h.appendChild(x);
+}, false);
 (function kmCodeColor() {
     var x, i, j, k, l, modes = ["html", "js", "java", "css", "sql", "python", "kotlin"];
     if (!document.getElementsByClassName) {
