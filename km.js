@@ -1,103 +1,3 @@
-if (typeof k42 == "undefined") {
-    k42 = false;
-}
-if (k42 == true) {
-    var k42ResizeFunc;
-
-    function k42Resizing() {
-        clearTimeout(k42ResizeFunc);
-        k42ResizeFunc = setTimeout(browserResize, 500);
-    }
-    if (window.addEventListener) {
-        window.addEventListener("resize", k42Resizing);
-    } else if (window.attachEvent) {
-        window.attachEvent("resize", k42Resizing);
-    }
-} else {
-    if (window.addEventListener) {
-        window.addEventListener("resize", browserResize);
-    } else if (window.attachEvent) {
-        window.attachEvent("onresize", browserResize);
-    }
-}
-var xbeforeResize = window.innerWidth;
-var ybeforeResize = window.innerWidth;
-var zbeforeResize = window.innerWidth;
-var sbeforeResize = window.innerWidth;
-var abeforeResize = window.innerWidth;
-
-function skyscraperResize() {
-    if (k42 == true) {
-        if (window.innerWidth < 975 + 17 && document.getElementById("snhb-wide_skyscraper-0")) {
-            document.getElementById("snhb-wide_skyscraper-0").style.minHeight = "0";
-        }
-    } else {
-        if (window.innerWidth < 975 + 17 && document.getElementById("div-gpt-ad-1422003450156-5")) {
-            document.getElementById("div-gpt-ad-1422003450156-5").style.minHeight = "0";
-        }
-    }
-}
-
-function browserResize() {
-    if (k42 == true) {
-        if (Number(km_getStyleValue(document.getElementById("main"), "height").replace("px", "")) > 2200) {
-            if (document.getElementById("snhb-mid_content-0")) {
-                snhb.queue.push(function() {
-                    snhb.startAuction(["main_leaderboard", "wide_skyscraper", "mid_content", "sidebar_sticky", "bottom_medium_rectangle", "right_bottom_medium_rectangle"]);
-                });
-            } else {
-                snhb.queue.push(function() {
-                    snhb.startAuction(["main_leaderboard", "wide_skyscraper", "sidebar_sticky", "bottom_medium_rectangle", "right_bottom_medium_rectangle"]);
-                });
-            }
-        } else {
-            if (document.getElementById("snhb-mid_content-0")) {
-                snhb.queue.push(function() {
-                    snhb.startAuction(["main_leaderboard", "wide_skyscraper", "mid_content", "bottom_medium_rectangle", "right_bottom_medium_rectangle"]);
-                });
-            } else {
-                snhb.queue.push(function() {
-                    snhb.startAuction(["main_leaderboard", "wide_skyscraper", "bottom_medium_rectangle", "right_bottom_medium_rectangle"]);
-                });
-            }
-        }
-    } else {
-        var afterResize = window.innerWidth;
-        if ((xbeforeResize < (1450 + 14) && afterResize >= (1450 + 14)) || (xbeforeResize >= (1450 + 14) && afterResize < (1450 + 14)) || (xbeforeResize < (700 + 14) && afterResize >= (700 + 14)) || (xbeforeResize >= (700 + 14) && afterResize < (700 + 14)) || (xbeforeResize < (480 + 17) && afterResize >= (480 + 17)) || (xbeforeResize >= (480 + 17) && afterResize < (480 + 17))) {
-            xbeforeResize = afterResize;
-            googletag.cmd.push(function() {
-                googletag.pubads().refresh([gptAdSlots[0]]);
-            });
-        }
-        if ((ybeforeResize < (1675 + 14) && afterResize >= (1675 + 14)) || (ybeforeResize >= (1675 + 14) && afterResize < (1675 + 14)) || (ybeforeResize < (1100 + 14) && afterResize >= (1100 + 14)) || (ybeforeResize >= (1100 + 14) && afterResize < (1100 + 14)) || (ybeforeResize < (975 + 17) && afterResize >= (975 + 17)) || (ybeforeResize >= (975 + 17) && afterResize < (975 + 17))) {
-            ybeforeResize = afterResize;
-            skyscraperResize()
-            googletag.cmd.push(function() {
-                googletag.pubads().refresh([gptAdSlots[1]]);
-            });
-        }
-        if ((zbeforeResize < (1240 + 14) && afterResize >= (1240 + 14)) || (zbeforeResize >= (1240 + 14) && afterResize < (1240 + 14))) {
-            zbeforeResize = afterResize;
-            googletag.cmd.push(function() {
-                googletag.pubads().refresh([gptAdSlots[2], gptAdSlots[3]]);
-            });
-        }
-        if ((sbeforeResize < (1675 + 14) && afterResize >= (1675 + 14)) || (sbeforeResize >= (1675 + 14) && afterResize < (1675 + 14)) || (sbeforeResize < (1100 + 14) && afterResize >= (1100 + 14)) || (sbeforeResize >= (1100 + 14) && afterResize < (1100 + 14)) || (sbeforeResize < (975 + 17) && afterResize >= (975 + 17)) || (sbeforeResize >= (975 + 17) && afterResize < (975 + 17))) {
-            sbeforeResize = afterResize;
-            googletag.cmd.push(function() {
-                googletag.pubads().refresh([gptAdSlots[4]]);
-            });
-        }
-        if ((abeforeResize < (1440 + 14) && afterResize >= (1440 + 14)) || (abeforeResize >= (1440 + 14) && afterResize < (1440 + 14)) || (abeforeResize < (1135 + 14) && afterResize >= (1135 + 14)) || (abeforeResize >= (1135 + 14) && afterResize < (1135 + 14)) || (abeforeResize < (993 + 14) && afterResize >= (993 + 14)) || (abeforeResize >= (993 + 14) && afterResize < (993 + 14)) || (abeforeResize < (750 + 14) && afterResize >= (1135 + 14)) || (abeforeResize >= (750 + 14) && afterResize < (750 + 14)) || (abeforeResize < (490 + 17) && afterResize >= (490 + 17)) || (abeforeResize >= (490 + 17) && afterResize < (490 + 17))) {
-            abeforeResize = afterResize;
-            googletag.cmd.push(function() {
-                googletag.pubads().refresh([gptAdSlots[5]]);
-            });
-        }
-    }
-}
-skyscraperResize();
-
 function open_menu() {
     var x, m;
     m = (document.getElementById("leftmenu") || document.getElementById("sidenav"));
@@ -141,34 +41,6 @@ function close_menu() {
             x[i].style.visibility = "visible";
         }
     }
-}
-if (window.addEventListener) {
-    window.addEventListener("scroll", function() {
-        fix_sidemenu();
-    });
-    window.addEventListener("resize", function() {
-        fix_sidemenu();
-    });
-    window.addEventListener("touchmove", function() {
-        fix_sidemenu();
-    });
-    window.addEventListener("load", function() {
-        fix_sidemenu();
-    });
-} 
-  else if (window.attachEvent) {
-    window.attachEvent("onscroll", function() {
-        fix_sidemenu();
-    });
-    window.attachEvent("onresize", function() {
-        fix_sidemenu();
-    });
-    window.attachEvent("ontouchmove", function() {
-        fix_sidemenu();
-    });
-    window.attachEvent("onload", function() {
-        fix_sidemenu();
-    });
 }
 
 function sidemenuitemintoview() {
@@ -278,13 +150,13 @@ function km_close_all_topnav() {
                 x[i].parentElement.previousElementSibling.className = "activesub";
             }
             break;
-        } else if (d.indexOf("/tags/att_") > -1) {
-            c = d.substring(d.indexOf("/tags/att_") + 10, d.lastIndexOf("_"));
-            if (x[i].href == d.substr(0, d.indexOf("/tags/")) + "/tags/tag_" + c + ".asp") {
+        } else if (d.indexOf("/tags/att-") > -1) {
+            c = d.substring(d.indexOf("/tags/att-") + 10, d.lastIndexOf("_"));
+            if (x[i].href == d.substr(0, d.indexOf("/tags/")) + "/tags/tag-" + c + ".html") {
                 x[i].className = "active";
             }
-        } else if (d.indexOf("/howto/default_page") > -1) {
-            if (x[i].href.indexOf("default.asp") > -1) {
+        } else if (d.indexOf("/howto/home-page") > -1) {
+            if (x[i].href.indexOf("home.html") > -1) {
                 x[i].className = "active";
             }
         }
