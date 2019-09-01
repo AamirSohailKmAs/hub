@@ -251,29 +251,3 @@ hr[id^=&quot;ez-insert-after-placeholder&quot;] {margin-top: 0;}
     border-left: 6px solid #2ec509;
 
 }
-.kh-home:before {
-    font-size: 31px;
-    content: &quot;\2302&quot;;
-}
-
-.kh-caret-down:before {
-    content: &quot;\25BC&quot;;
-}
-.kh-caret-up:before {
-    content: &quot;\25B2&quot;;
-}
-.kh-search:before {
-    font-size: 32px;
-    content: &quot;\2315&quot;;
-    font-weight: bold;
-}
-.kh-times:before {
-    font-size: 36px;
-    content: &quot;\d7&quot;;
-}
-.kh-bars:before {
-    content: &quot;\2630&quot;;
-}
-.kh-ellipsis-v:before {
-    content: &quot;\2807&quot;;
-}
