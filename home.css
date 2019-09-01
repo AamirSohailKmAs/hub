@@ -204,7 +204,6 @@ width:auto;
 #km-topnav{display:none;}
 #nav_references {margin-top:172px;} #nav_exercises{margin-top:130px;}
 #km-topnav{display:block;width:auto;overflow:hidden;height:44px;background:green;position:fixed;left:104px;right:51px;}#km-topnav a {display:block;}#km-topnav a:nth-of-type(n+4){visibility:hidden;display:initial;}
-  #kh-topnav{visibility: hidden;}
 #color-picker{margin: 0px 0px 0px 10px; height: 12em;background-position: center; background-repeat: no-repeat; background-size: contain;  background-image: url(https://4.bp.blogspot.com/-SIeKIVTs_ws/XQIBFIpAoRI/AAAAAAAAAEk/A581GM4y2Ewq2wflxwt-MRYNgjylAg34ACLcBGAs/s1600/KmarsHub-Color-Picker.png);}
 #google_translate_element, .goog-te-gadget-simple {right:104px !important;}
 .KmarsHub-logo {font-size: 48px;position: relative;top: 28px;text-align:center; width:100%;margin:auto}
@@ -234,86 +233,47 @@ hr[id^=&quot;ez-insert-after-placeholder&quot;] {margin-top: 0;}
  #ContactForm{display:none;}
   .kh-btn-rotate{}
   .km-badge:hover, .km-tag:hover{color:white;text-decoration:none;background-color: blueviolet;}
-<!-- <style>
-.tagcolor{color:mediumblue}
-.tagnamecolor{color:brown}
-.attributecolor{color:red}
-.attributevaluecolor{color:mediumblue}
-.commentcolor{color:green}
-.cssselectorcolor{color:brown}
-.csspropertycolor{color:red}
-.csspropertyvaluecolor{color:mediumblue}
-.cssdelimitercolor{color:black}
-.cssimportantcolor{color:red}  
-.jscolor{color:black}
-.jskeywordcolor{color:mediumblue}
-.jsstringcolor{color:brown}
-.jsnumbercolor{color:red}
-.jspropertycolor{color:black}
-.javacolor{color:black}
-.javakeywordcolor{color:mediumblue}
-.javastringcolor{color:brown}
-.javanumbercolor{color:red}
-.javapropertycolor{color:black}
-.kotlincolor{color:black}
-.kotlinkeywordcolor{color:mediumblue}
-.kotlinstringcolor{color:brown}
-.kotlinnumbercolor{color:red}
-.kotlinpropertycolor{color:black}
-.phptagcolor{color:red}
-.phpcolor{color:black}
-.phpkeywordcolor{color:mediumblue}
-.phpglobalcolor{color:goldenrod}
-.phpstringcolor{color:brown}
-.phpnumbercolor{color:red}  
-.pythoncolor{color:black}
-.pythonkeywordcolor{color:mediumblue}
-.pythonstringcolor{color:brown}
-.pythonnumbercolor{color:red}  
-.angularstatementcolor{color:red}
-.sqlcolor{color:black}
-.sqlkeywordcolor{color:mediumblue}
-.sqlstringcolor{color:brown}
-.sqlnumbercolor{color:} 
-.darktheme {background-color:rgb(40,44,52);color:white;}
-.darktheme .tagcolor{color:#88ccbb/*green2*/!important}
-.darktheme .tagnamecolor{color:#ff9999/*red*/!important}
-.darktheme .attributecolor{color:#c5a5c5/*purple*/!important}
-.darktheme .attributevaluecolor{color:#88c999/*green*/!important}
-.darktheme .commentcolor{color:color: #999;!important}
-.darktheme .cssselectorcolor{color:#ff9999/*red*/!important}
-.darktheme .csspropertycolor{color:#c5a5c5/*purple*/!important}
-.darktheme .csspropertyvaluecolor{color:#88c999/*green*/!important}
-.darktheme .cssdelimitercolor{color:white!important}
-.darktheme .cssimportantcolor{color:color:#ff9999/*red*/!important}
-.darktheme .jscolor{color:white!important}
-.darktheme .jskeywordcolor{color:#c5a5c5/*purple*/!important}
-.darktheme .jsstringcolor{color:#88c999/*green*/!important}
-.darktheme .jsnumbercolor{color:#80b6ff/*blue*/!important}
-.darktheme .jspropertycolor{color:white!important}
-.darktheme .javacolor{color:white!important}
-.darktheme .javakeywordcolor{color:#88c999/*green*/!important}
-.darktheme .javastringcolor{color:#88c999/*green*/!important}
-.darktheme .javanumbercolor{color:#88c999/*green*/!important}
-.darktheme .javapropertycolor{color:white!important}
-.darktheme .kotlincolor{color:white!important}
-.darktheme .kotlinkeywordcolor{color:#88c999/*green*/!important}
-.darktheme .kotlinstringcolor{color:#88c999/*green*/!important}
-.darktheme .kotlinnumbercolor{color:#88c999/*green*/!important}
-.darktheme .kotlinpropertycolor{color:white!important}
-.darktheme .phptagcolor{color:#999!important}
-.darktheme .phpcolor{color:white!important}
-.darktheme .phpkeywordcolor{color:#ff9999/*red*/!important}
-.darktheme .phpglobalcolor{color:white!important}
-.darktheme .phpstringcolor{color:color:#88c999/*green*/!important}
-.darktheme .phpnumbercolor{color:#88c999/*green*/!important}
-.darktheme .pythoncolor{color:white!important}
-.darktheme .pythonkeywordcolor{color:#ff9999/*red*/!important}
-.darktheme .pythonstringcolor{color:#88c999/*green*/!important}
-.darktheme .pythonnumbercolor{color:#88c999/*green*/!important}
-.darktheme .angularstatementcolor{color:#ff9999/*red*/!important}
-.darktheme .sqlcolor{color:white!important}
-.darktheme .sqlkeywordcolor{color:#80b6ff/*blue*/!important}
-.darktheme .sqlstringcolor{color:#88c999/*green*/!important}
-.darktheme .sqlnumbercolor{color:}
-</style>-->
+.post-header {display:none;}
+#km-search{width: 100%;top: 44px;padding: 8px;background: #0065c7;float: left;position: fixed;z-index: 2;display: none;}
+.active {color: #fff!important;background-color: dodgerblue!important;}
+.km-btn, .km-btn:link, .km-btn:visited {color: #FFFFFF;background-color: #003280;}
+.skip {position: absolute;top: -1000px;left: -1000px;}
+.km-intro {
+    padding: 8px 16px!important;
+    margin: 16px 0px;
+    background-color: #e6f8ff;
+    border-left: 6px solid dodgerblue;
+}
+.km-note {
+    padding: 8px 16px!important;
+    margin: 16px 0px;
+    background-color: #ecffdb;
+    border-left: 6px solid #2ec509;
+
+}
+.kh-home:before {
+    font-size: 31px;
+    content: &quot;\2302&quot;;
+}
+
+.kh-caret-down:before {
+    content: &quot;\25BC&quot;;
+}
+.kh-caret-up:before {
+    content: &quot;\25B2&quot;;
+}
+.kh-search:before {
+    font-size: 32px;
+    content: &quot;\2315&quot;;
+    font-weight: bold;
+}
+.kh-times:before {
+    font-size: 36px;
+    content: &quot;\d7&quot;;
+}
+.kh-bars:before {
+    content: &quot;\2630&quot;;
+}
+.kh-ellipsis-v:before {
+    content: &quot;\2807&quot;;
+}
