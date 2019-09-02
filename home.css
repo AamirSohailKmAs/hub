@@ -108,11 +108,6 @@ padding-left:6px;
 .km-example a:focus,.nextprev a:focus{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);}
 .nextprev a.km-right, .nextprev a.km-left {background-color: #0065c7; color: #ffffff; border-color: darkblue; padding: 8px; text-decoration: none;transition-duration: 0.4s;}
   .nextprev a.km-right:hover, .nextprev a.km-left:hover {background-color:green;border-radius:0px 10px;box-shadow: -1px 11px 13px 0px #c1bebe;}
-#km-exerciseform {background-color:#555555;padding:16px;color:#ffffff;}
-#km-exerciseform .exercisewindow {background-color:#ffffff;padding:16px;color:#000000;}
-#km-exerciseform .exerciseprecontainer {background-color:#f1f1f1;padding:16px;font-size:120%;font-family:Consolas,&quot;Courier New&quot;, Courier, monospace;}
-#km-exerciseform .exerciseprecontainer pre {display: block;}
-#km-exerciseform .exerciseprecontainer input {padding:1px;border: 1px solid transparent;height:1.3em;}
 .km-theme {color:#fff !important;background-color:#73AD21 !important;background-color:#4CAF50 !important}
 .km-theme-border {border-color:#4CAF50 !important}
 .sharethis a:hover {color:inherit;}
@@ -225,9 +220,6 @@ last view port
 @media only screen and (max-width:993px) {#km-topnav {left: 104px;}}*/
 @media only screen and (min-width:993px) {/* */ #km-topnav {left: 52px !important;}}
   .km-button:hover{color: #fff!important;background-color: dodgerblue!important;}
-.km-note{background-color:#ffffcc;border-left:6px solid #ffeb3b}
-.km-warning{background-color:#ffdddd;border-left:6px solid #f44336}
-.km-info{background-color:#ddffdd;border-left:6px solid #4CAF50}
 hr[id^=&quot;ez-insert-after-placeholder&quot;] {margin-top: 0;}
 .phonebr {display:none;}
  #ContactForm{display:none;}
@@ -238,16 +230,3 @@ hr[id^=&quot;ez-insert-after-placeholder&quot;] {margin-top: 0;}
 .active {color: #fff!important;background-color: dodgerblue!important;}
 .km-btn, .km-btn:link, .km-btn:visited {color: #FFFFFF;background-color: #003280;}
 .skip {position: absolute;top: -1000px;left: -1000px;}
-.km-intro {
-    padding: 8px 16px!important;
-    margin: 16px 0px;
-    background-color: #e6f8ff;
-    border-left: 6px solid dodgerblue;
-}
-.km-note {
-    padding: 8px 16px!important;
-    margin: 16px 0px;
-    background-color: #ecffdb;
-    border-left: 6px solid #2ec509;
-
-}
