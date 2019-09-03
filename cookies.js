@@ -53,12 +53,12 @@
       style.type = 'text/css';
       _setElementText(style,
           '.' + divClass + ' { ' +
-              'position:fixed;width:100%;background-color:#666;margin:0;' +
-              'left:0;top:0;padding:0;z-index:4000;text-align:center;' +
+              'position:fixed;width:100%;background-color:#666666bf;margin:0;' +
+              'left:0;bottom:0;z-index:50;text-align:left;' +
               'color:#fff;line-height:140%;padding:10px 0;' +
               'font-family:roboto,Arial; } ' +
           '.' + divClass + ' .' + innerDivClass + ' { ' +
-              'position:relative;width:initial;margin:0;left:0;top:0; } ' +
+              'position:relative;background:#666666bf;width:initial;margin:0;left:0;top:0; } ' +
           '.' + divClass + ' .' + textSpan + ' { ' +
               'display:inline-block;vertical-align:middle;font-size:16px;' +
               'margin:10px 20px;color:#ccc;max-width:800px;' +
