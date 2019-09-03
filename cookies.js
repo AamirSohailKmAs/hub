@@ -158,10 +158,12 @@
   window.KHcookie = KHcookie;
   return KHcookie;
 })(this);
-    document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
-      window.KHcookie &amp;&amp; KHcookie.showCookieConsentBar &amp;&amp; KHcookie.showCookieConsentBar(
-          (window.cookieOptions &amp;&amp; cookieOptions.msg) || &quot;KmarsHub uses cookies. By continuing to browse the site, you are accepting Our&quot;,
-          (window.cookieOptions &amp;&amp; cookieOptions.close) || &quot;Accept&quot;,
-          (window.cookieOptions &amp;&amp; cookieOptions.learn) || &quot;Cookies Policy&quot;,
-            (window.cookieOptions &amp;&amp; cookieOptions.link) || &quot;https://kmarshub.blogspot.com/2010/07/privacy-policy.html#Cookies&quot;);
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+      window.KHcookie && KHcookie.showCookieConsentBar && KHcookie.showCookieConsentBar(
+          (window.cookieOptions && cookieOptions.msg) || "KmarsHub uses cookies. By continuing to browse the site, you are accepting Our",
+          (window.cookieOptions && cookieOptions.close) || "Accept",
+          (window.cookieOptions && cookieOptions.learn) || "Cookies Policy",
+            (window.cookieOptions && cookieOptions.link) || "https://kmarshub.blogspot.com/2010/07/privacy-policy.html#Cookies");
     }); 
+ 
