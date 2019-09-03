@@ -158,12 +158,9 @@
   window.KHcookie = KHcookie;
   return KHcookie;
 })(this);
-
-    document.addEventListener("DOMContentLoaded", function(event) {
-      window.KHcookie && KHcookie.showCookieConsentBar && KHcookie.showCookieConsentBar(
+ window.KHcookie && KHcookie.showCookieConsentBar && KHcookie.showCookieConsentBar(
           (window.cookieOptions && cookieOptions.msg) || "KmarsHub uses cookies. By continuing to browse the site, you are accepting Our",
           (window.cookieOptions && cookieOptions.close) || "Accept",
           (window.cookieOptions && cookieOptions.learn) || "Cookies Policy",
             (window.cookieOptions && cookieOptions.link) || "https://kmarshub.blogspot.com/2010/07/privacy-policy.html#Cookies");
-    }); 
  
