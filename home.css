@@ -1,5 +1,3 @@
-.km-darkgoldenrod {color: #fff!important;background-color: darkgoldenrod;}
-  .km-green {color: #fff!important;background-color: green !important;}
 a:hover,a:active{color:#4CAF50}
 table.km-table-all{margin:20px 0}
 /*OPPSETT AV TOP, TOPNAV, SIDENAV, MAIN, RIGHT OG FOOTER:*/
@@ -12,64 +10,18 @@ line-height:50px;
 overflow:hidden;
 z-index:12;
 }
-.topnav {
-position:fixed;
-z-index:12;
-font-size:17px;
-background-color:green;
-color:#f1f1f1;
-width:100%;
-padding:0;
-letter-spacing:1px;
-font-family:&quot;Segoe UI&quot;,Arial,sans-serif;
-}
-.topnav a{
-padding:10px 15px !important;
-}
-.topnav .km-bar a:hover,.topnav .km-bar a:focus{
-background-color:dodgerblue !important;
-color:#ffffff !important;
-}
-.topnav a.active {
-background-color:#0065c7;
-color:#ffffff;
-}
-a.topnav-icons {
-width:52px !important;
-font-size:20px !important;
-padding-top:11px !important;
-padding-bottom:13px !important;
-}
+.topnav {position:fixed;z-index:12;font-size:17px;background-color:green;color:#f1f1f1;width:100%;padding:0;letter-spacing:1px;font-family:"Segoe UI",Arial,sans-serif;}
+.topnav a{padding:10px 15px !important;}
+.topnav .km-bar a:hover,.topnav .km-bar a:focus{background-color:dodgerblue !important;color:#ffffff !important;}
+.topnav a.active {background-color:#0065c7;color:#ffffff;}
+a.topnav-icons {width:52px !important;font-size:20px !important;padding-top:11px !important;padding-bottom:13px !important;}
 a.topnav-icons.fa-menu {font-size:22px !important}
-a.topnav-localicons {
-font-size:20px !important;
-padding-top:6px !important;
-padding-bottom:12px !important;
-}
+a.topnav-localicons {font-size:20px !important;padding-top:6px !important;padding-bottom:12px !important;}
 i.fa-caret-down,i.fa-caret-up{width:10px}
-#sidenav h2 {
-font-size:21px;
-padding-left:16px;
-margin:-4px 0 4px 0;
-width:204px;
-}
+#sidenav h2 {font-size:21px;padding-left:16px;margin:-4px 0 4px 0;width:204px;}
 
-#leftmenuinner {
-position:fixed;
-top:0;
-padding-top:44px;
-padding-bottom:0;    
-height:100%;
-width:22%;
-background-color:skyblue;
-}
-#leftmenuinnerinner {background-color:skyblue !important;
-border:none;
-height:97%;
-width:100%;
-overflow-y:scroll;
-overflow-x:hidden;
-}
+#leftmenuinner {position:fixed;top:0;padding-top:44px;padding-bottom:0;height:100%;width:22%;background-color:skyblue;}
+#leftmenuinnerinner {background-color:skyblue !important;border:none;height:100%;width:100%;overflow-y:scroll;overflow-x:hidden;}
 #main {padding:16px}
 #mainLeaderboard {height:90px}
 #right {text-align:center;padding:16px 16px 0 0}
@@ -86,21 +38,10 @@ overflow-x:hidden;
 #nav_tutorials::-webkit-scrollbar,#nav_references::-webkit-scrollbar,#nav_exercises::-webkit-scrollbar {width: 12px;}
 #nav_tutorials::-webkit-scrollbar-track,#nav_references::-webkit-scrollbar-track,#nav_exercises::-webkit-scrollbar-track {background:#555555;}
 #nav_tutorials::-webkit-scrollbar-thumb,#nav_references::-webkit-scrollbar-thumb,#nav_exercises::-webkit-scrollbar-thumb {background: #999999;}
-#nav_tutorials,#nav_references,#nav_exercises {
-display:none;
-letter-spacing:0;
-margin-top:44px;
-}
-#nav_tutorials a,#nav_references a,#nav_exercises a{
-padding:2px 0 2px 6px!important;
-}
-#nav_tutorials a:focus,#nav_references a:focus,#nav_exercises a:focus{
-color: #fff;
-background-color: dodgerblue;
-}
-#nav_tutorials h3,#nav_references h3,#nav_exercises h3{
-padding-left:6px;
-}
+#nav_tutorials,#nav_references,#nav_exercises {display:none;letter-spacing:0;margin-top:44px;}
+#nav_tutorials a,#nav_references a,#nav_exercises a{padding:2px 0 2px 6px!important;}
+#nav_tutorials a:focus,#nav_references a:focus,#nav_exercises a:focus{color: #fff;background-color: dodgerblue;}
+#nav_tutorials h3,#nav_references h3,#nav_exercises h3{padding-left:6px;}
 .ref_overview{display:none}
 .km-example{background-color:#f1f1f1;padding:0.01em 16px;margin:20px 0;box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important}
 .nextprev a {font-size:17px;border:1px solid #cccccc;}
@@ -115,41 +56,14 @@ padding-left:6px;
 .fa-facebook-square:hover, .fa-thumbs-o-up:hover {color:#3B5998;}
 .fa-twitter-square:hover {color:#55acee;}
 .fa-google-plus-square:hover {color:#dd4b39;}
-#google_translate_element img {margin-bottom:-1px;}
-#googleSearch {color:#000000;}
-#googleSearch a {padding:0 !important;}
-.searchdiv {max-width:400px;margin:auto;text-align:left;font-size:16px}
-div.cse .gsc-control-cse, div.gsc-control-cse {height:44px;background-color:transparent;border:none;padding:6px;margin:0px}
-td.gsc-search-button input.gsc-search-button {background-color:#4CAF50;border-color:#4CAF50}
-td.gsc-search-button input.gsc-search-button:hover {background-color:#46a049;}
-input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button {
-box-sizing:content-box; line-height:normal;}
-#gsc-iw-id1 #gs_id50 {margin-bottom: 0px !important;}
-.gsc-tabsArea div {overflow:visible;}
-/*&quot;nullstille&quot; kmcss:*/
 .km-main{transition:margin-left 0s;}
-/*&quot;nullstilling&quot; slutt*/
 @media only screen and (max-width: 475px) {.phonebr {display:initial;}}
-@media only screen and (max-width: 480px) {
-.km-code {font-size:14px;}
-.km-codespan {font-size:15px;}
-
-}
-
-
-
+@media only screen and (max-width: 480px) {.km-code {font-size:14px;}.km-codespan {font-size:15px;}}
 @media only screen and (max-width:600px) {
-.km-example, .km-note, #km-exerciseform {margin-left:-16px;margin-right:-16px;}
-.top {height:68px}
-.toptext {display:none}
-}
-span.marked, span.deprecated {
- color:#e80000;
- background-color:transparent;
-}
-.intro {background-color: #e1f0f7;border-left: 6px solid dodgerblue;font-size: 16px;}
+.km-example, .km-note, #km-exerciseform {margin-left:-16px;margin-right:-16px;}.top {height:68px}.toptext {display:none}}
+span.marked, span.deprecated {color:#e80000; background-color:transparent;}
 .km-btn, .km-btn:link, .km-btn:visited {color:#FFFFFF;background-color:#4CAF50}
-a.km-btn[href*=&quot;exercise.html&quot;],a.km-btn[href*=&quot;exercise_js.html&quot;] {margin:10px 5px 0 0}
+a.km-btn[href*="exercise.html"],a.km-btn[href*="exercise_js.html"] {margin:10px 5px 0 0}
 a.btnplayit,a.btnplayit:link,a.btnplayit:visited {background-color:#FFAD33;padding:1px 10px 2px 10px}
 a.btnplayit:hover,a.btnplayit:active {background-color:#ffffff;color:#FFAD33}
 a.btnplayit:hover {box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);}
@@ -170,18 +84,10 @@ a.btnsmall:active,a.btnsmall:hover {color:#4CAF50;background-color:#ffffff}
 .top img {display:block;margin:auto;}
 .top .kmarshub-logo {font-size: 48px;position: relative;top: 28px;text-align:center; width:100%;margin:auto}
 .toptext {width:100%;text-align:center}
-#sidenav {width:260px;
-box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
+#sidenav {width:260px;box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
 #sidenav h2 {font-size:26px;width:100%;}
 #sidenav a {padding:3px 2px 3px 24px;font-size:17px}
-#leftmenuinner {  
-overflow:auto;
--webkit-overflow-scrolling:touch;
-height:100%;
-position:relative;
-width:auto;
-}
+#leftmenuinner {overflow:auto;-webkit-overflow-scrolling:touch;height:100%;position:relative;width:auto;}
 #leftmenuinnerinner {overflow:hidden;}
 .bottomad {float:none;text-align:center}
 #skyscraper {min-height:60px}
@@ -199,8 +105,6 @@ width:auto;
 #km-topnav{display:none;}
 #nav_references {margin-top:172px;} #nav_exercises{margin-top:130px;}
 #km-topnav{display:block;width:auto;overflow:hidden;height:44px;background:green;position:fixed;left:104px;right:51px;}#km-topnav a {display:block;}#km-topnav a:nth-of-type(n+4){visibility:hidden;display:initial;}
-#color-picker{margin: 0px 0px 0px 10px; height: 12em;background-position: center; background-repeat: no-repeat; background-size: contain;  background-image: url(https://4.bp.blogspot.com/-SIeKIVTs_ws/XQIBFIpAoRI/AAAAAAAAAEk/A581GM4y2Ewq2wflxwt-MRYNgjylAg34ACLcBGAs/s1600/KmarsHub-Color-Picker.png);}
-#google_translate_element, .goog-te-gadget-simple {right:104px !important;}
 .KmarsHub-logo {font-size: 48px;position: relative;top: 28px;text-align:center; width:100%;margin:auto}
 /*
 #km-topnav a:nth-last-child(2){display:block;}
@@ -220,10 +124,8 @@ last view port
 @media only screen and (max-width:993px) {#km-topnav {left: 104px;}}*/
 @media only screen and (min-width:993px) {/* */ #km-topnav {left: 52px !important;}}
   .km-button:hover{color: #fff!important;background-color: dodgerblue!important;}
-hr[id^=&quot;ez-insert-after-placeholder&quot;] {margin-top: 0;}
+hr[id^="ez-insert-after-placeholder"] {margin-top: 0;}
 .phonebr {display:none;}
- #ContactForm{display:none;}
-  .kh-btn-rotate{}
   .km-badge:hover, .km-tag:hover{color:white;text-decoration:none;background-color: blueviolet;}
 .post-header {display:none;}
 #km-search{width: 100%;top: 44px;padding: 8px;background: #0065c7;float: left;position: fixed;z-index: 2;display: none;}
