@@ -142,15 +142,6 @@ img {
 	z-index: 1
 }
 
-.km-sidebar {
-	height: 100%;
-	width: 200px;
-	background-color: #fff;
-	position: fixed!important;
-	z-index: 1;
-	overflow: auto
-}
-
 .km-bar-block .km-dropdown-click,
 .km-bar-block .km-dropdown-hover {
 	width: 100%
