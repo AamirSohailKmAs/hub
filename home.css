@@ -1,47 +1,30 @@
-a:hover,a:active{color:#4CAF50}
-table.km-table-all{margin:20px 0}
-/*OPPSETT AV TOP, TOPNAV, SIDENAV, MAIN, RIGHT OG FOOTER:*/
-.top {
-position:relative;
-background-color:green;
-height:68px;
-padding-top:20px;
-line-height:50px;
-overflow:hidden;
-z-index:12;
-}
+a:hover,a:active{color:#4CAF50}table.km-table-all{margin:20px 0}
 .topnav {position:fixed;z-index:12;font-size:17px;background-color:green;color:#f1f1f1;width:100%;padding:0;letter-spacing:1px;font-family:"Segoe UI",Arial,sans-serif;}
 .topnav a{padding:10px 15px !important;}
 .topnav .km-bar a:hover,.topnav .km-bar a:focus{background-color:dodgerblue !important;color:#ffffff !important;}
 .topnav a.active {background-color:#0065c7;color:#ffffff;}
 a.topnav-icons {width:52px !important;font-size:20px !important;padding-top:11px !important;padding-bottom:13px !important;}
-a.topnav-icons.fa-menu {font-size:22px !important}
-a.topnav-localicons {font-size:20px !important;padding-top:6px !important;padding-bottom:12px !important;}
-i.fa-caret-down,i.fa-caret-up{width:10px}
+i.kh-caret-down,i.kh-caret-up{width:10px}
 #sidenav h2 {font-size:21px;padding-left:16px;margin:-4px 0 4px 0;width:204px;}
-
 #leftmenuinner {position:fixed;top:0;padding-top:44px;padding-bottom:0;height:100%;width:22%;background-color:skyblue;}
 #leftmenuinnerinner {background-color:skyblue !important;border:none;height:100%;width:100%;overflow-y:scroll;overflow-x:hidden;}
-#main {padding:16px}
-#mainLeaderboard {height:90px}
+#main {padding:16px} #mainLeaderboard {height:90px}
 #right {text-align:center;padding:16px 16px 0 0}
 #right a {text-decoration:none}
 #right a:hover {text-decoration:underline}
 #skyscraper {min-height:600px}
 .sidesection {margin-bottom:32px;}
-#sidesection_exercise a{display:block;padding:4px 10px;}
-#sidesection_exercise a:hover,#sidesection_exercise a:active{background-color:#ccc;text-decoration:none;color:#000000;}
 .bottomad {padding:0 16px 16px 0;float:left;width:auto;}
 .footer a {text-decoration:none;}
 .footer a:hover{text-decoration:underline;}
-#nav_tutorials,#nav_references,#nav_exercises{-webkit-overflow-scrolling:touch;overflow:auto;background:darkblue;position:relative;}
+#nav_tutorials,#nav_references,#nav_exercises{-webkit-overflow-scrolling:touch;overflow:auto;background:darkblue;position:fixed;top:0;width:100%;left:0;z-index:5;}
 #nav_tutorials::-webkit-scrollbar,#nav_references::-webkit-scrollbar,#nav_exercises::-webkit-scrollbar {width: 12px;}
 #nav_tutorials::-webkit-scrollbar-track,#nav_references::-webkit-scrollbar-track,#nav_exercises::-webkit-scrollbar-track {background:#555555;}
 #nav_tutorials::-webkit-scrollbar-thumb,#nav_references::-webkit-scrollbar-thumb,#nav_exercises::-webkit-scrollbar-thumb {background: #999999;}
 #nav_tutorials,#nav_references,#nav_exercises {display:none;letter-spacing:0;margin-top:44px;}
-#nav_tutorials a,#nav_references a,#nav_exercises a{padding:2px 0 2px 6px!important;}
+#nav_tutorials a,#nav_references a,#nav_exercises a{padding:2px 0 2px 6px!important;color:white;}
 #nav_tutorials a:focus,#nav_references a:focus,#nav_exercises a:focus{color: #fff;background-color: dodgerblue;}
-#nav_tutorials h3,#nav_references h3,#nav_exercises h3{padding-left:6px;}
+#nav_tutorials h3,#nav_references h3,#nav_exercises h3{padding-left:6px;color:white;}
 .ref_overview{display:none}
 .km-example{background-color:#f1f1f1;padding:0.01em 16px;margin:20px 0;box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important}
 .nextprev a {font-size:17px;border:1px solid #cccccc;}
@@ -53,9 +36,7 @@ i.fa-caret-down,i.fa-caret-up{width:10px}
 .km-theme-border {border-color:#4CAF50 !important}
 .sharethis a:hover {color:inherit;}
 .fa-facebook-square,.fa-twitter-square,.fa-google-plus-square {padding:0 8px;}
-.fa-facebook-square:hover, .fa-thumbs-o-up:hover {color:#3B5998;}
-.fa-twitter-square:hover {color:#55acee;}
-.fa-google-plus-square:hover {color:#dd4b39;}
+.fa-facebook-square:hover, .fa-thumbs-o-up:hover {color:#3B5998;}.fa-twitter-square:hover {color:#55acee;}.fa-google-plus-square:hover {color:#dd4b39;}
 .km-main{transition:margin-left 0s;}
 @media only screen and (max-width: 475px) {.phonebr {display:initial;}}
 @media only screen and (max-width: 480px) {.km-code {font-size:14px;}.km-codespan {font-size:15px;}}
@@ -71,32 +52,14 @@ a.btnsmall:link,a.btnsmall:visited,a.btnsmall:active,a.btnsmall:hover {
 float:right;padding:1px 10px 2px 10px;font:15px Verdana, sans-serif;}
 a.btnsmall:hover {box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);}
 a.btnsmall:active,a.btnsmall:hover {color:#4CAF50;background-color:#ffffff}
-
-
-@media only screen and (max-width:700px) {
-#mainLeaderboard {height:60px}
-#div-gpt-ad-1422003450156-0 {float:none;margin-left:auto;margin-right:auto}
-#div-gpt-ad-1422003450156-3 {float:none;margin-left:auto;margin-right:auto}
-}
-
-  @media only screen and (max-width:992px) {#color-picker {height:20em !important;}
-.top {height:100px}
-.top img {display:block;margin:auto;}
-.top .kmarshub-logo {font-size: 48px;position: relative;top: 28px;text-align:center; width:100%;margin:auto}
-.toptext {width:100%;text-align:center}
-#sidenav {width:260px;box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
+@media only screen and (max-width:700px) {#mainLeaderboard {height:60px} #div-gpt-ad-1422003450156-0, #div-gpt-ad-1422003450156-3 {float:none;margin-left:auto;margin-right:auto}}
+@media only screen and (max-width:992px) {#sidenav {width:260px;box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
 #sidenav h2 {font-size:26px;width:100%;}
 #sidenav a {padding:3px 2px 3px 24px;font-size:17px}
 #leftmenuinner {overflow:auto;-webkit-overflow-scrolling:touch;height:100%;position:relative;width:auto;}
 #leftmenuinnerinner {overflow:hidden;}
-.bottomad {float:none;text-align:center}
-#skyscraper {min-height:60px}
-}
-
-@media only screen and (min-width:1675px) {
-#main {width:76%}
-#right {width:23%}
-}
+.bottomad {float:none;text-align:center}#skyscraper {min-height:60px}}
+@media only screen and (min-width:1675px) {#main {width:76%}#right {width:23%}}
 /* kmarshub mobile first version*/
 /*#km-topnav a:nth-of-type(n+2){display:none;}*/
  .km-bar .km-bar-item {float:none;}
@@ -106,29 +69,41 @@ a.btnsmall:active,a.btnsmall:hover {color:#4CAF50;background-color:#ffffff}
 #nav_references {margin-top:172px;} #nav_exercises{margin-top:130px;}
 #km-topnav{display:block;width:auto;overflow:hidden;height:44px;background:green;position:fixed;left:104px;right:51px;}#km-topnav a {display:block;}#km-topnav a:nth-of-type(n+4){visibility:hidden;display:initial;}
 .KmarsHub-logo {font-size: 48px;position: relative;top: 28px;text-align:center; width:100%;margin:auto}
-/*
-#km-topnav a:nth-last-child(2){display:block;}
-#km-topnav a:nth-last-child(1){display:block;}*/
-
+/*#km-topnav a:nth-last-child(2){display:block;}#km-topnav a:nth-last-child(1){display:block;}*/
 @media only screen and (min-width:280px) {/* */}
-
 @media only screen and (min-width:200px) {/* */}
 @media only screen and (min-width:240px) {/* */}
 @media only screen and (min-width:300px) {/* */}
 @media only screen and (min-width:420px) {/* */}
-
 @media only screen and (min-width:605px) {#open_btns a:nth-last-child(3){display:none;} #km-topnav a:nth-of-type(n+4){visibility:inherit;} .km-bar .km-bar-item {float:left;} #km-topnav {height: 44px !important;left: 104px !important;top: 0px !important;right: 50px !important;} #nav_tutorials,#nav_references,#nav_exercises {margin-top:44px;} #google_translate_element, .goog-te-gadget-simple {right:54px !important;}}/*
 @media only screen and (min-width:710px) {#km-topnav a:nth-of-type(n+6){display:none;}}
 last view port
 @media only screen and (min-width:775px) {#km-topnav a:nth-of-type(n+7){display:none;}}
 @media only screen and (max-width:993px) {#km-topnav {left: 104px;}}*/
 @media only screen and (min-width:993px) {/* */ #km-topnav {left: 52px !important;}}
-  .km-button:hover{color: #fff!important;background-color: dodgerblue!important;}
-hr[id^="ez-insert-after-placeholder"] {margin-top: 0;}
-.phonebr {display:none;}
-  .km-badge:hover, .km-tag:hover{color:white;text-decoration:none;background-color: blueviolet;}
-.post-header {display:none;}
+.km-button:hover{color: #fff!important;background-color: dodgerblue!important;}
+hr[id^="ez-insert-after-placeholder"] {margin-top: 0;}.phonebr {display:none;}
+.km-badge:hover, .km-tag:hover{color:white;text-decoration:none;background-color: blueviolet;}.post-header {display:none;}
 #km-search{width: 100%;top: 44px;padding: 8px;background: #0065c7;float: left;position: fixed;z-index: 2;display: none;}
 .active {color: #fff!important;background-color: dodgerblue!important;}
 .km-btn, .km-btn:link, .km-btn:visited {color: #FFFFFF;background-color: #003280;}
 .skip {position: absolute;top: -1000px;left: -1000px;}
+.km-demo-btn {color: white;background-color: green;border: none; display: inline-block; padding: 8px 16px; overflow: hidden;text-decoration: none;text-align: center; cursor: pointer; white-space: nowrap;}
+.km-demo-btn:hover{background-color: blue;}
+.km-learn-box{border-left:8px solid;margin: 16px 0px;padding: 0px 12px;}
+.km-learn-box:before, .km-learn-box:after {content: &quot;&quot;;display: table;clear: both;}
+.km-danger{background-color:#ffe8d4;border-left-color:#673ab7;}
+.km-warning{background-color:#ffdddd;border-left-color:#d00f01}
+.km-info  {background-color:#ddffdd;border-left-color:#4CAF50;}
+.km-intro {background-color:#e6f8ff;border-left-color:#003280;}
+.km-note  {background-color:#ffe8d4;border-left-color:#f69d3c;}
+.km-tips  {background-color:#ffe8d4;border-left-color:#f69d3c;}
+.km-tricks{background-color:#ffe8d4;border-left-color:#673ab7;}
+.km-footer h4{color: white;margin: 0;padding:1em 14px;}
+.km-footer-1 h4, .km-footer-1 a{background:darkred;}
+.km-footer-2 h4, .km-footer-2 a{background:royalblue;}
+.km-footer-3 h4, .km-footer-3 a{background:green;}
+.km-footer-4 h4, .km-footer-4 a{background:darkgoldenrod;}
+.km-footer a{color: white;display: block;padding: 8px 12px;margin: 2px;}
+.km-footer a:hover{padding-left: 14px;cursor: pointer;}
+#to-top{padding: 8px;background: indigo;color: white;position: fixed;bottom: 13px;font-size: 16px;z-index: 4001;text-decoration: none;font-weight: 800;}
